@@ -1,0 +1,59 @@
+# ═══════════════════════════════════════════════════════════
+# BINANCE AI SCALPING BOT - REQUIREMENTS
+# ═══════════════════════════════════════════════════════════
+
+# ────────── CORE TRADING ──────────
+python-binance>=1.0.17
+ccxt>=4.2.26
+websocket-client>=1.6.3
+requests>=2.31.0
+
+# ────────── DATA SCIENCE ──────────
+pandas>=2.0.3
+numpy>=1.24.3
+scipy>=1.11.1
+
+# ────────── DEEP LEARNING ──────────
+# Для CUDA 11.8 (RTX 2060 оптимально)
+torch==2.1.0+cu118
+torchvision==0.16.0+cu118
+torchaudio==2.1.0+cu118
+--index-url https://download.pytorch.org/whl/cu118
+
+# ────────── TECHNICAL ANALYSIS ──────────
+ta>=0.10.2
+# TA-Lib может требовать отдельной установки:
+# Windows: скачать .whl с https://www.lfd.uci.edu/~gohlke/pythonlibs/#ta-lib
+# Linux: sudo apt-get install ta-lib
+# ta-lib>=0.4.28
+
+# ────────── MACHINE LEARNING ──────────
+scikit-learn>=1.3.0
+optuna>=3.3.0
+joblib>=1.3.2
+tensorboard>=2.14.0
+imbalanced-learn>=0.11.0
+
+# ────────── CONFIG & ENV ──────────
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# ────────── UTILITIES ──────────
+tqdm>=4.65.0
+python-dateutil>=2.8.2
+colorama>=0.4.6
+tabulate>=0.9.0
+humanize>=4.8.0
+psutil>=5.9.5
+
+# ────────── VISUALIZATION ──────────
+matplotlib>=3.7.2
+seaborn>=0.12.2
+plotly>=5.16.1
+
+# ────────── OPTIONAL: NOTIFICATIONS ──────────
+python-telegram-bot>=20.5
+
+# ─────────️─ TESTING ──────────
+pytest>=7.4.0
+pytest-cov>=4.1.0

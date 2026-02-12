@@ -1,0 +1,36 @@
+# Trading Configuration
+
+backtest:
+  initial_capital: 10000
+  commission: 0.0004  # 0.04%
+  slippage: 0.0001    # 0.01%
+  min_sharpe_ratio: 1.5
+  min_win_rate: 0.55
+  max_drawdown: 5     # percent
+  
+live_trading:
+  paper_trading: true  # Set to false for real trading
+  update_interval: 1   # seconds
+  max_spread_bps: 5    # maximum spread in basis points
+  min_volume_usdt: 50000  # minimum 24h volume in USDT
+  
+risk_management:
+  risk_per_trade: 1.0  # percent of capital
+  max_drawdown: 5      # percent
+  daily_loss_limit: 3  # percent
+  max_open_positions: 3
+  stop_loss_atr: 1.5   # ATR multiplier
+  take_profit_atr: 2.0  # ATR multiplier
+  trailing_stop: true
+  trailing_stop_atr: 1.0
+  
+retrain_conditions:
+  check_interval: 3600  # seconds
+  after_failed_trades: 3
+  after_drawdown: 5     # percent
+  min_confidence: 0.65  # minimum prediction confidence
+  
+signal_thresholds:
+  long_threshold: 0.7
+  short_threshold: 0.3
+  neutral_zone: 0.4-0.6

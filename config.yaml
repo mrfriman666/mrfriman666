@@ -1,0 +1,54 @@
+# Main Configuration File
+
+data:
+  interval: "1m"  # 1m, 3m, 5m, 15m, 30m, 1h
+  lookback_days: 30
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+  
+trading:
+  pairs:
+    - "BTCUSDT"
+    - "ETHUSDT"
+    - "BNBUSDT"
+    - "SOLUSDT"
+    - "ADAUSDT"
+  strategies:
+    - "order_flow"      # Order flow imbalances
+    - "volume_profile"  # Volume profile analysis
+    - "market_microstructure"  # Market microstructure
+  max_positions: 3
+  leverage: 1
+  
+features:
+  price_features:
+    - "open"
+    - "high"
+    - "low"
+    - "close"
+    - "volume"
+    - "quote_volume"
+    
+  technical_indicators:
+    - "rsi"
+    - "macd"
+    - "bb_upper"
+    - "bb_lower"
+    - "atr"
+    - "volume_sma"
+    
+  order_flow_features:
+    - "bid_ask_imbalance"
+    - "tick_volume"
+    - "trade_velocity"
+    - "cumulative_delta"
+    
+  microstructure_features:
+    - "spread"
+    - "liquidity_score"
+    - "volatility_regime"
+    - "microstructure_noise"
+    
+  sequence_length: 60  # Number of candles for sequence
+  target_horizon: 5    # Predict next 5 candles

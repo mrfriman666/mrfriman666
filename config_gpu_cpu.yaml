@@ -1,0 +1,20 @@
+# GPU/CPU Resource Configuration
+
+gpu:
+  enabled: true
+  device_id: 0
+  memory_limit: 50  # percent (0-75)
+  precision: "mixed"  # fp32, fp16, mixed
+  
+cpu:
+  thread_limit: 4  # number of threads (0 = all, max 75% of total)
+  process_limit: 2  # number of processes for parallel operations
+  
+memory:
+  data_cache_size: 2  # GB
+  pin_memory: true
+  
+optimization:
+  auto_detect: true  # Auto-configure based on hardware
+  benchmark: true   # Run benchmark to find optimal settings
+  fallback_cpu: true  # Fallback to CPU if GPU issues

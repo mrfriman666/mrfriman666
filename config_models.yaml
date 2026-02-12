@@ -1,0 +1,50 @@
+# Model Configuration
+
+model:
+  architecture: "multi_head_attention"  # cnn_lstm, transformer, multi_head_attention
+  input_size: 50
+  hidden_size: 128
+  num_layers: 3
+  num_heads: 8
+  dropout: 0.2
+  
+training:
+  batch_size: 64
+  epochs: 100
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  optimizer: "adamw"
+  scheduler:
+    enabled: true
+    type: "cosine"
+    warmup_epochs: 5
+    
+  early_stopping:
+    enabled: true
+    patience: 15
+    min_delta: 0.0001
+    
+  loss_function: "huber"  # mse, huber, quantile
+  
+  augmentation:
+    enabled: true
+    noise_factor: 0.001
+    time_warp: false
+    
+retraining:
+  schedule: "24h"  # 24h, 12h, 6h
+  after_failed_trades: 3
+  after_drawdown: 5  # percent
+  incremental_learning: true
+  fine_tune_epochs: 20
+  
+optimization:
+  method: "bayesian"  # grid, random, bayesian
+  n_trials: 50
+  n_jobs: -1
+  parameters:
+    learning_rate: [0.0001, 0.001, 0.01]
+    hidden_size: [64, 128, 256]
+    num_layers: [2, 3, 4]
+    dropout: [0.1, 0.2, 0.3]
+    batch_size: [32, 64, 128]
